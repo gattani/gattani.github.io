@@ -1,0 +1,21 @@
+- name: Professional Cloud Architect Certification
+  image: https://images.credly.com/size/680x680/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png
+  link: https://www.credly.com/badges/48395cce-0e20-46d4-a545-15b71fe65fb5
+- name: AWS Certified Solutions Architect – Professional
+  image: https://images.credly.com/size/680x680/images/2d84e428-9078-49b6-a804-13c15383d0de/image.png
+  link: https://www.credly.com/badges/3cbeb6a7-de26-4120-bdcd-91dc9874b8f9
+- name: AWS Certified Machine Learning – Specialty
+  image: https://images.credly.com/size/680x680/images/778bde6c-ad1c-4312-ac33-2fa40d50a147/image.png
+  link: https://www.credly.com/badges/93e92644-b44e-4daa-84f1-fd9692795647
+- name: AWS Certified Security – Specialty
+  image: https://images.credly.com/size/680x680/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png
+  link: https://www.credly.com/badges/73064fd7-d037-4114-b508-5a78ad3553ec
+- name: AWS Certified Developer – Associate
+  image: https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png
+  link: https://www.credly.com/badges/92f923b0-c713-4404-ba67-97f238b2c834
+- name: "Microsoft Certified: Azure Fundamentals"
+  image: https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png
+  link: https://www.credly.com/badges/d066f476-51cd-4153-9d0e-7997538657a0
+- name: "Microsoft Certified: Azure AI Fundamentals"
+  image: https://images.credly.com/size/680x680/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png
+  link: https://www.credly.com/badges/6cce7423-2fe4-47da-a827-1f436317a0b8

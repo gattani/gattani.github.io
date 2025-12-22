@@ -10,41 +10,72 @@ You can visit the live website at: **[abhishek.gattani.ca](http://abhishek.gatta
 
 ## 🛠️ Built With
 
-- **HTML5**: Semantic structure and content.
-- **CSS3**: Custom styling, responsive design, and animations.
-- **JavaScript**: Interactive elements and dynamic behavior.
-- **Font Awesome**: Iconography.
-- **Google Fonts**: Typography (Inter & Outfit).
+- **Jekyll**: Static site generator.
+- **Liquid**: Templating engine.
+- **HTML5/CSS3**: Custom structure and styling.
+- **GitHub Pages**: Hosting and deployment.
 
-## 🚀 Features
+## 📝 How to Update Content
 
-- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
-- **Print Friendly**: tailored styles for printing or saving as PDF.
-- **Dark Mode / Light Mode**: (If applicable, otherwise just 'Clean UI') Clean and modern user interface.
-- **Downloadable Resume**: Easy access to PDF version.
+The content of the resume is separated from the design. You can update your information by editing the YAML files in the `_data/` directory.
 
-## 💻 Local Developement
+### 1. **Profile & Contact Info** (`_data/profile.yml`)
+Update your name, title, summary, email, linkedin, and location.
 
-To run this project locally:
+### 2. **Experience** (`_data/experience.yml`)
+Add or edit jobs. Each job has:
+- `role`: Job title
+- `company`: Company name
+- `date`: Employment period
+- `description`: List of bullet points describing your work
+
+### 3. **Education** (`_data/education.yml`)
+Update your degrees and schools.
+
+### 4. **Certifications** (`_data/certifications.yml`)
+Add new certifications. You'll need:
+- `name`: Certification title
+- `image`: URL to the badge image
+- `link`: URL to the Credly/verification page
+
+### 5. **Skills** (`_data/skills.yml`)
+Update skills categorized by group (e.g., Strategy, Technical, Cloud).
+
+## 💻 Local Development
+
+To run this project locally, you need [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Bundler](https://bundler.io/) installed.
 
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/gattani/gattani.github.io.git
     cd gattani.github.io
     ```
-    *(Note: Replace URL with your actual repo URL if different)*
 
-2.  **Open index.html:**
-    Simply open the `index.html` file in your preferred web browser.
-
-    Or use a simple HTTP server (recommended for loading assets correctly):
+2.  **Install dependencies:**
     ```bash
-    # Python 3
-    python -m http.server
-    
-    # Node.js (http-server)
-    npx http.server
+    bundle install
     ```
+
+3.  **Run the server:**
+    ```bash
+    bundle exec jekyll serve
+    ```
+
+4.  **View the site:**
+    Open `http://localhost:4000` in your browser.
+
+## 🚀 Deployment
+
+This site is hosted on GitHub Pages. To deploy changes:
+
+1.  Make your edits.
+2.  Commit and push to the `main` branch.
+    ```bash
+    git add .
+    git commit -m "Update resume content"
+    git push
+    ```
+3.  GitHub Actions will automatically build and deploy the site.
 
 ## 📄 License
 

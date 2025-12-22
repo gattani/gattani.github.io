@@ -1,0 +1,97 @@
+- role: Customer Engineer
+  team: Retail and Large Enterprise Team
+  company: Google Cloud
+  logo: assets/images/google.png
+  location: Toronto, Canada
+  date: Sep 2025 - Present
+  description:
+    - Partner with technical sales teams to design and present creative cloud solutions and architectures for Retail and Large Enterprise customers.
+    - Drive infrastructure modernization, application modernization, and data analytics initiatives to solve critical business problems.
+    - Collaborate with product management and engineering to prioritize feature enhancements and stay ahead of industry trends.
+    - Lead proof-of-concept (POC) engagements and troubleshoot technical roadblocks to demonstrate the value of Google Cloud.
+
+- role: Sr. Data Architect
+  team: National Security and Defense
+  company: Amazon Web Services
+  logo: assets/images/aws.png
+  location: Toronto, Canada
+  date: Jan 2022 - Sep 2025
+  description:
+    - Lead and deliver high-impact data analytics projects for AWS's National Security customers leveraging cutting-edge cloud technologies (Data Lakes, Data Warehouses, Data Mesh) as a part of Professional Services engagements.
+    - Engineered a robust data mesh solution for a National Security customer consolidating data from 4+ disparate LoBs, enhancing sharing capabilities and enabling advanced analytics.
+    - Collaborated with cross-functional AWS teams to drive customer outcomes, adoption, and expertise in AWS data services.
+    - Provided technical leadership for data architecture and engineering teams, ensuring successful implementations.
+    - Conducted on-site technical assessments and pre-sales consultations, crafting packaged data & analytics SoWs, Deals and Solutions.
+    - Partnered with sales and pre-sales teams to provide technical expertise and support throughout the sales process.
+
+- role: Sr. Enterprise Architect
+  team: Data and Cloud
+  company: TELUS
+  logo: assets/images/telus.png
+  location: Toronto, Canada
+  date: Jan 2020 - Dec 2021
+  description:
+    - Championed a strategic shift towards a cloud-first approach, leading enterprise data migration projects that cut costs and improved data retrieval times by 35%.
+    - Directed the design and implementation of an enterprise-level Data architecture framework, yielding an increase in operational efficiency.
+    - Contributed to the development of a centralized Data Hub on Google Cloud BigQuery, replacing 10+ disparate platforms.
+    - Architected an Enterprise-wide data governance framework encompassing metadata management, privacy, and quality controls, that focsed on Enterprise Architecture as Code for agility.
+
+- role: Practice Manager
+  team: Data and Cloud
+  company: Tech Mahindra
+  logo: assets/images/techmahindra.png
+  location: Toronto, Canada
+  date: Mar 2016 - Dec 2019
+  description:
+    - Led a team of ~35 engineers delivering complex data projects for a major telecom client (>$5M/year Professional Services engagement).
+    - Successfully migrated data to the cloud by leading proof-of-concept initiatives and guiding architecture decisions.
+    - Provided leadership on Data and Analytics application migrations and consildation within a large enterprise.
+    - Collaborated with presales teams on RFPs/RFIs for new deals scoping ans estimations.
+
+- role: Lead Presales Architect
+  team: Telcom Data and Analytics
+  company: Tech Mahindra
+  logo: assets/images/techmahindra.png
+  location: London, UK and Oslo, Norway
+  date: Apr 2013 - Feb 2016
+  description:
+    - Led bid managers and solution architects in securing multi-million dollar deals (>$2M) for Cloud, Data, and Analytics projects.
+    - Spearheaded a cloud migration strategy contract worth $3M, positioning the company as a leading Analytics provider.
+    - Drove pre-sales for multiple Large Telco and consulting engagements across Western Europe, UK and Nordics.
+
+- role: Team Lead
+  team: Data and Analytics
+  company: Persistent Systems
+  logo: assets/images/persistent.png
+  location: Pune, India
+  date: Sep 2012 - Apr 2013
+  description:
+    - Directed a cross-functional team delivering a scalable data warehouse for a major restaurant booking platform, optimizing SSIS pipelines to boost ETL performance by 55%.
+    - Collaborated with Product Managers on data product design, architecting and implementing a core 'restaurant ratings and reviews' analytics feature to drive user engagement.
+    - Designed robust data models (SQL Server, SSAS, OLAP) and led BI initiatives, while limiting technical debt by conducting feasibility studies for emerging technologies (e.g., MongoDB).
+
+- role: Data Warehouse Lead
+  team: Analytics and BI
+  company: Quinstreet
+  logo: assets/images/quinstreet.png
+  location: Pune, India & Foster City, California
+  date: Sep 2010 - Sep 2012
+  description:
+    - Delivered a high-performance data warehouse solution that consolidated data, improved efficiency (60% ETL performance improvement), and provided performance optimization insights.
+    - Led data warehousing initiatives using OWB, building large-scale 50M row data warehouses and data marts.
+    - Designed and implemented ETL pipelines using OWB for diverse data (clickstream, usage, billing).
+    - Collaborated with analysts to translate user needs into effective data models.
+    - Mentored the data warehouse team, fostering knowledge sharing in ETL/BI.
+
+- role: Technology Consultant
+  team: Data and Analytics
+  company: Tech Mahindra
+  logo: assets/images/techmahindra.png
+  location: Mumbai, India & Cardiff, UK
+  date: Jul 2006 - Sep 2010
+  description:
+    - Led a high-performing offshore team delivering data warehousing for a British Telecommunications customer using Oracle Exadata.
+    - Translated business needs into detailed design documents and impact analysis.
+    - Created and implemented data pipelines using PL/SQL and Oracle Warehouse Builder (OWB).
+    - Streamlined ETL processes through automation of OWB tasks, reducing daily workloads by over 50%.
+    - Contributed to the full project lifecycle from design and modeling to development and testing.

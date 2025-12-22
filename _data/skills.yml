@@ -1,0 +1,30 @@
+- category: Strategy & Leadership
+  items:
+    - Cloud Analytics and AI Strategy
+    - Digital Transformation
+    - Presales and Consulting
+    - Sales Engineering
+
+- category: Data Architecture & Engineering
+  items:
+    - Enterprise Data Architecture
+    - Modern Data Warehousing
+    - Data Lakes & Lakehouses
+    - Data Governance
+    - ETL/ELT Pipelines
+    - Dimensional Modeling
+
+- category: AI & Machine Learning
+  items:
+    - Generative AI (LLMs, RAG)
+    - Machine Learning Solutions
+    - AI Strategy & Implementation
+    - MLOps
+
+- category: Cloud Platforms & Ecosystem
+  items:
+    - AWS (Glue, Athena, Bedrock, Q Suite, Redshift)
+    - GCP (BigQuery, Gemini, Vertex AI)
+    - Azure (Fabric, Synapse, Data Factory)
+    - Snowflake Data Cloud
+    - Python, PySpark & SQL

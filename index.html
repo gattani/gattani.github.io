@@ -1,392 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
+<header class="resume-header">
+    <div class="header-content">
+        <h1 class="name">{{ site.data.profile.name }}</h1>
+        <h2 class="title">{{ site.data.profile.role }}</h2>
+        <p class="summary">{{ site.data.profile.summary }}</p>
+        <div class="contact-info">
+            <a href="mailto:{{ site.data.profile.email }}"><i class="fas fa-envelope"></i> {{ site.data.profile.email
+                }}</a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Resume of Abhishek Gattani - Customer Engineer at Google Cloud | Data & Analytics Leader">
-    <title>Abhishek Gattani | Customer Engineer @ Google Cloud</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom tweaks for this content */
-        .skills-category {
-            margin-bottom: 1rem;
-        }
-
-        .skills-category strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .cert-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
-        }
-
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cert-item i {
-            color: var(--accent-color);
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <header class="resume-header">
-            <div class="header-content">
-                <h1 class="name">Abhishek Gattani</h1>
-                <h2 class="title">Customer Engineer @ Google Cloud</h2>
-                <p class="summary">Customer Engineer at Google Cloud empowering Retail and Large
-                    Enterprise customers in their digital transformation journey. 20 years of experience architecting
-                    enterprise-scale data platforms and AI solutions across GCP, AWS, Azure and On-premises. Proven
-                    track record
-                    delivering
-                    transformative projects for global Fortune 500 companies and National Security customers, with
-                    deep expertise
-                    in Data Warehousing, Data Lakes, Analytics, Data Governance, and Gen AI.</p>
-                <div class="contact-info">
-                    <a href="mailto:abhishek@gattani.ca"><i class="fas fa-envelope"></i> abhishek@gattani.ca</a>
-
-                    <a href="https://linkedin.com/in/agattani"><i class="fab fa-linkedin"></i>
-                        linkedin.com/in/agattani</a>
-                    <span class="location"><i class="fas fa-map-marker-alt"></i> Toronto, ON, Canada</span>
-                </div>
-            </div>
-        </header>
-
-        <main class="resume-body">
-            <section class="section certifications">
-                <h3 class="section-title">Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/48395cce-0e20-46d4-a545-15b71fe65fb5" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png"
-                                alt="Professional Cloud Architect Certification" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/3cbeb6a7-de26-4120-bdcd-91dc9874b8f9" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/2d84e428-9078-49b6-a804-13c15383d0de/image.png"
-                                alt="AWS Certified Solutions Architect – Professional" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/93e92644-b44e-4daa-84f1-fd9692795647" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/778bde6c-ad1c-4312-ac33-2fa40d50a147/image.png"
-                                alt="AWS Certified Machine Learning – Specialty" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/73064fd7-d037-4114-b508-5a78ad3553ec" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/53acdae5-d69f-4dda-b650-d02ed7a50dd7/image.png"
-                                alt="AWS Certified Security – Specialty" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/92f923b0-c713-4404-ba67-97f238b2c834" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
-                                alt="AWS Certified Developer – Associate" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/d066f476-51cd-4153-9d0e-7997538657a0" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png"
-                                alt="Microsoft Certified: Azure Fundamentals" class="cert-badge">
-                        </a>
-                    </div>
-                    <div class="cert-card">
-                        <a href="https://www.credly.com/badges/6cce7423-2fe4-47da-a827-1f436317a0b8" target="_blank"
-                            rel="noopener">
-                            <img src="https://images.credly.com/size/680x680/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png"
-                                alt="Microsoft Certified: Azure AI Fundamentals" class="cert-badge">
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section experience">
-                <h3 class="section-title">Experience</h3>
-                <div class="timeline">
-                    <!-- Google Cloud -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/google.png" alt="Google Cloud Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Customer Engineer</h4>
-                                <span class="team">Retail and Large Enterprise Team</span>
-                                <span class="company">Google Cloud</span>
-                            </div>
-                            <span class="location">Toronto, Canada</span>
-                            <span class="date">Sep 2025 - Present</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Partner with technical sales teams to design and present creative cloud solutions and
-                                architectures for Retail and Large Enterprise customers.</li>
-                            <li>Drive infrastructure modernization, application modernization, and data analytics
-                                initiatives to solve critical business problems.</li>
-                            <li>Collaborate with product management and engineering to prioritize feature enhancements
-                                and stay ahead of industry trends.</li>
-                            <li>Lead proof-of-concept (POC) engagements and troubleshoot technical roadblocks to
-                                demonstrate the value of Google Cloud.</li>
-                        </ul>
-                    </div>
-
-                    <!-- AWS -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/aws.png" alt="AWS Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Sr. Data Architect</h4>
-                                <span class="team">National Security and Defense</span>
-                                <span class="company">Amazon Web Services</span>
-                            </div>
-                            <span class="location">Toronto, Canada</span>
-                            <span class="date">Jan 2022 - Sep 2025</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Lead and deliver high-impact data analytics projects for AWS's National Security
-                                customers leveraging cutting-edge cloud technologies (Data Lakes, Data Warehouses, Data
-                                Mesh) as a part of Professional Services engagements.</li>
-                            <li>Engineered a robust data mesh solution consolidating data from 4+ disparate LoBs,
-                                enhancing sharing capabilities and enabling advanced analytics.</li>
-                            <li>Collaborated with cross-functional AWS teams to drive customer outcomes, adoption, and
-                                expertise in AWS data services.</li>
-                            <li>Provided technical leadership for data architecture and engineering teams, ensuring
-                                successful implementations.</li>
-                            <li>Conducted on-site technical assessments and pre-sales consultations, crafting packaged
-                                data & analytics solutions.</li>
-                            <li>Partnered with sales and pre-sales teams to provide technical expertise and support
-                                throughout the sales process.</li>
-                        </ul>
-                    </div>
-
-                    <!-- TELUS -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/telus.png" alt="TELUS Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Sr. Enterprise Architect</h4>
-                                <span class="team">Data and Cloud</span>
-                                <span class="company">TELUS</span>
-                            </div>
-                            <span class="location">Toronto, Canada</span>
-                            <span class="date">Jan 2020 - Dec 2021</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Championed a strategic shift towards a cloud-first approach, leading enterprise data
-                                migration projects that cut costs by 20% and improved data retrieval times by 35%.</li>
-                            <li>Directed the design and implementation of an enterprise-level Data architecture
-                                framework, yielding a 25% increase in operational efficiency.</li>
-                            <li>Contributed to the development of a centralized Data Hub on Google Cloud BigQuery,
-                                replacing 10+ disparate platforms.</li>
-                            <li>Architected data governance solutions encompassing metadata management, privacy, and
-                                quality controls.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tech Mahindra (Practice Manager) -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/techmahindra.png" alt="Tech Mahindra Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Practice Manager</h4>
-                                <span class="team">Data and Cloud</span>
-                                <span class="company">Tech Mahindra</span>
-                            </div>
-                            <span class="location">Toronto, Canada</span>
-                            <span class="date">Mar 2016 - Dec 2019</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Led a team of ~35 engineers delivering complex data projects for a major telecom client
-                                (>$5M/year Professional Services engagement).</li>
-                            <li>Successfully migrated data to the cloud by leading proof-of-concept initiatives and
-                                guiding architecture decisions.</li>
-                            <li>Provided leadership on Data and Analytics application migrations and consildation within
-                                a large enterprise.</li>
-                            <li>Collaborated with presales teams on RFPs/RFIs for new engagement scoping.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tech Mahindra (Presales) -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/techmahindra.png" alt="Tech Mahindra Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Lead Presales Architect</h4>
-                                <span class="team">Telcom Data and Analytics</span>
-                                <span class="company">Tech Mahindra (UK/Europe)</span>
-                            </div>
-                            <span class="location">London, UK</span>
-                            <span class="date">Apr 2013 - Feb 2016</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Led bid managers and solution architects in securing multi-million dollar deals (>$2M)
-                                for Cloud, Data, and Analytics projects.</li>
-                            <li>Spearheaded a cloud migration strategy contract worth $3M, positioning the company as a
-                                leading Analytics provider.</li>
-                            <li>Drove pre-sales for Large Telco and consulting engagements.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Persistent Systems -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/persistent.png" alt="Persistent Systems Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Team Lead</h4>
-                                <span class="team">Data and Analytics</span>
-                                <span class="company">Persistent Systems</span>
-                            </div>
-                            <span class="location">Pune, India</span>
-                            <span class="date">Sep 2012 - Apr 2013</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Directed a cross-functional team of analysts in a complex data warehousing project for a
-                                leading restaurant booking and management software client, improving ETL performance by
-                                55%.</li>
-                            <li>Created data structures for efficient data storage and analysis (Data Modeling).</li>
-                            <li>Built SSIS data pipelines to extract, transform, and load data into a SQL Server data
-                                warehouse and SSAS cubes.</li>
-                            <li>Provided leadership on OLAP and BI tools for data exploration and reporting.</li>
-                            <li>Conducted proof-of-concepts and feasibility studies for NoSQL DBs (e.g., MongoDB).</li>
-                        </ul>
-                    </div>
-
-                    <!-- Quinstreet (EDW/BI) -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/quinstreet.png" alt="Quinstreet Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Data Warehouse Lead</h4>
-                                <span class="team">Analytics and BI</span>
-                                <span class="company">Quinstreet</span>
-                            </div>
-                            <span class="location">Pune, India & Foster City, California</span>
-                            <span class="date">Sep 2010 - Sep 2012</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Delivered a high-performance data warehouse solution that consolidated data, improved
-                                efficiency (60% ETL performance improvement), and provided valuable insights.</li>
-                            <li>Led data warehousing initiatives using OWB, building large-scale 50M row data warehouses
-                                and data marts.</li>
-                            <li>Designed and implemented ETL pipelines using OWB for diverse data (clickstream, usage,
-                                billing).</li>
-                            <li>Collaborated with analysts to translate user needs into effective data models.</li>
-                            <li>Mentored the data warehouse team, fostering knowledge sharing in ETL/BI.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Tech Mahindra (Consultant) -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <img src="assets/images/techmahindra.png" alt="Tech Mahindra Logo" class="company-logo">
-                            <div>
-                                <h4 class="role">Technology Consultant</h4>
-                                <span class="team">Data and Analytics</span>
-                                <span class="company">Tech Mahindra</span>
-                            </div>
-                            <span class="location">Mumbai, India & Cardiff, UK</span>
-                            <span class="date">Jul 2006 - Sep 2010</span>
-                        </div>
-                        <ul class="description-list">
-                            <li>Led a high-performing offshore team delivering data warehousing for a British
-                                Telecommunications customer using Oracle Exadata.</li>
-                            <li>Translated business needs into detailed design documents and impact analysis.</li>
-                            <li>Created and implemented data pipelines using PL/SQL and Oracle Warehouse Builder (OWB).
-                            </li>
-                            <li>Streamlined ETL processes through automation of OWB tasks, reducing daily workloads by
-                                over 50%.</li>
-                            <li>Contributed to the full project lifecycle from design and modeling to development and
-                                testing.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section skills">
-                <h3 class="section-title">Key Skills</h3>
-                <div class="skills-category">
-                    <strong>Strategy & Leadership</strong>
-                    <div class="skills-list">
-                        <span class="skill-tag">Cloud Data Strategy</span>
-                        <span class="skill-tag">Digital Transformation</span>
-                        <span class="skill-tag">Solution Architecture</span>
-                        <span class="skill-tag">Technical Leadership</span>
-                        <span class="skill-tag">Presales & Sales Engineering</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <strong>Technical Expertise</strong>
-                    <div class="skills-list">
-                        <span class="skill-tag">Cloud Data Architecture</span>
-                        <span class="skill-tag">Data Governance</span>
-                        <span class="skill-tag">Data Warehousing</span>
-                        <span class="skill-tag">Data Marts</span>
-                        <span class="skill-tag">Dimensional Modeling</span>
-                        <span class="skill-tag">ETL & Data Pipelines</span>
-                        <span class="skill-tag">Big Data Lakes</span>
-                        <span class="skill-tag">Data Mesh</span>
-                        <span class="skill-tag">Machine Learning/AI</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <strong>Cloud & Tools</strong>
-                    <div class="skills-list">
-                        <span class="skill-tag">AWS (Glue, Athena, Bedrock, Q Suite, Redshift)</span>
-                        <span class="skill-tag">GCP (BigQuery, Vertex AI)</span>
-                        <span class="skill-tag">Azure (Fabric, Synapse, Data Factory)</span>
-                        <span class="skill-tag">Snowflake</span>
-                        <span class="skill-tag">Python/PySpark</span>
-                        <span class="skill-tag">SQL Server (SSIS, SSAS)</span>
-                        <span class="skill-tag">SQL Tuning</span>
-                        <span class="skill-tag">Oracle (OWB, Exadata)</span>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="section education">
-                <h3 class="section-title">Education</h3>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4 class="degree">B.Tech - Chemical Technology</h4>
-                        <span class="school">Laxminarayan Institute of Technology, Nagpur University</span>
-                        <span class="location">First Class</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="resume-footer">
-            <p>&copy; <span id="year"></span> Abhishek Gattani. Hosted on GitHub Pages.</p>
-            <button id="print-btn" class="print-btn"><i class="fas fa-print"></i> Save as PDF</button>
-        </footer>
+            <a href="{{ site.data.profile.linkedin }}"><i class="fab fa-linkedin"></i>
+                {{ site.data.profile.linkedin_display }}</a>
+            <span class="location"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
+        </div>
     </div>
-    <script src="script.js"></script>
-</body>
+</header>
 
-</html>
+<main class="resume-body">
+    <section class="section certifications">
+        <h3 class="section-title">Certifications</h3>
+        <div class="cert-grid">
+            {% for cert in site.data.certifications %}
+            <div class="cert-card">
+                <a href="{{ cert.link }}" target="_blank" rel="noopener">
+                    <img src="{{ cert.image }}" alt="{{ cert.name }}" class="cert-badge">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section experience">
+        <h3 class="section-title">Experience</h3>
+        <div class="timeline">
+            {% for job in site.data.experience %}
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <img src="{{ job.logo }}" alt="{{ job.company }} Logo" class="company-logo">
+                    <div>
+                        <h4 class="role">{{ job.role }}</h4>
+                        <span class="team">{{ job.team }}</span>
+                        <span class="company">{{ job.company }}</span>
+                    </div>
+                    <span class="location">{{ job.location }}</span>
+                    <span class="date">{{ job.date }}</span>
+                </div>
+                <ul class="description-list">
+                    {% for item in job.description %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section skills">
+        <h3 class="section-title">Key Skills</h3>
+        {% for category in site.data.skills %}
+        <div class="skills-category">
+            <strong>{{ category.category }}</strong>
+            <div class="skills-list">
+                {% for skill in category.items %}
+                <span class="skill-tag">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="section education">
+        <h3 class="section-title">Education</h3>
+        <div class="card-grid">
+            {% for edu in site.data.education %}
+            <div class="card">
+                <h4 class="degree">{{ edu.degree }}</h4>
+                <span class="school">{{ edu.school }}</span>
+                {% if edu.honor %}
+                <span class="location">{{ edu.honor }}</span>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>

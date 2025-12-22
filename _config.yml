@@ -1,0 +1,12 @@
+title: Abhishek Gattani | Customer Engineer @ Google Cloud
+description: Resume of Abhishek Gattani - Customer Engineer at Google Cloud | Data & Analytics Leader
+url: "https://abhishek.gattani.ca" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+author:
+  name: Abhishek Gattani
+  email: abhishek@gattani.ca
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
