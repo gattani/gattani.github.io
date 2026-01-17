@@ -1,24 +1,15 @@
 ---
 layout: default
 ---
-<header class="resume-header">
-    <div class="header-content">
-        <h1 class="name">{{ site.data.profile.name }}</h1>
-        <h2 class="title">{{ site.data.profile.role }}</h2>
-        <p class="summary">{{ site.data.profile.summary }}</p>
-        <div class="contact-info">
-            <a href="mailto:{{ site.data.profile.email }}"><i class="fas fa-envelope"></i> {{ site.data.profile.email
-                }}</a>
 
-            <a href="{{ site.data.profile.linkedin }}"><i class="fab fa-linkedin"></i>
-                {{ site.data.profile.linkedin_display }}</a>
-            <span class="location"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
-        </div>
-    </div>
-</header>
 
 <main class="resume-body">
-    <section class="section certifications">
+    <section class="section summary-section">
+        <h3 class="section-title">Profile Summary</h3>
+        <p class="summary-text">{{ site.data.profile.summary }}</p>
+    </section>
+
+    <section id="certifications" class="section certifications">
         <h3 class="section-title">Certifications</h3>
         <div class="cert-grid">
             {% for cert in site.data.certifications %}
@@ -31,7 +22,7 @@ layout: default
         </div>
     </section>
 
-    <section class="section experience">
+    <section id="experience" class="section experience">
         <h3 class="section-title">Experience</h3>
         <div class="timeline">
             {% for job in site.data.experience %}
@@ -56,7 +47,7 @@ layout: default
         </div>
     </section>
 
-    <section class="section skills">
+    <section id="skills" class="section skills">
         <h3 class="section-title">Key Skills</h3>
         {% for category in site.data.skills %}
         <div class="skills-category">
@@ -70,7 +61,7 @@ layout: default
         {% endfor %}
     </section>
 
-    <section class="section education">
+    <section id="education" class="section education">
         <h3 class="section-title">Education</h3>
         <div class="card-grid">
             {% for edu in site.data.education %}
