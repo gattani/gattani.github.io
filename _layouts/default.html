@@ -8,7 +8,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-N0H2N51XMV');
     </script>
     <meta charset="UTF-8">
@@ -19,74 +18,43 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom tweaks for this content */
-        .skills-category {
-            margin-bottom: 1rem;
-        }
-
-        .skills-category strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .cert-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 10px;
-        }
-
-        .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cert-item i {
-            color: var(--accent-color);
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
 
-<body>
+<body data-theme="dark">
     <div class="layout-wrapper">
         <nav class="side-nav">
-            <div class="nav-header">
-                <a href="{{ '/' | relative_url }}" class="nav-brand">
-                    <h1 class="nav-name">{{ site.data.profile.name }}</h1>
-                </a>
-                <p class="nav-role">{{ site.data.profile.role }}</p>
-                <div class="nav-contact">
-                    <span class="location"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
-                    <a href="mailto:{{ site.data.profile.email }}"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="{{ site.data.profile.linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="nav-inner">
+                <div class="nav-header">
+                    <a href="{{ '/' | relative_url }}" class="nav-brand">
+                        <h1 class="nav-name">{{ site.data.profile.name }}</h1>
+                    </a>
+                    <p class="nav-role">{{ site.data.profile.role }}</p>
+                    <div class="nav-contact">
+                        <span class="nav-location"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
+                        <a href="mailto:{{ site.data.profile.email }}"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span></a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span>Career Journey</span></a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+                </ul>
+
+                <div class="nav-footer">
+
+                    <button id="print-btn" class="print-btn"><i class="fas fa-print"></i> Export PDF</button>
                 </div>
             </div>
-            <ul>
-                <li><a href="#certifications" class="nav-link"><i
-                            class="fas fa-certificate"></i><span>Certifications</span></a></li>
-                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span>Experience</span></a>
-                </li>
-                <li><a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span>Skills</span></a></li>
-                <li><a href="#education" class="nav-link"><i
-                            class="fas fa-graduation-cap"></i><span>Education</span></a></li>
-            </ul>
-
-            <div class="nav-footer">
-                <button id="print-btn" class="print-btn"><i class="fas fa-print"></i> PDF</button>
-            </div>
         </nav>
+
         <main class="main-content">
             <div class="container">
                 {{ content }}
-
                 <footer class="resume-footer">
                     <p>&copy; <span id="year"></span> {{ site.data.profile.name }}</p>
                 </footer>

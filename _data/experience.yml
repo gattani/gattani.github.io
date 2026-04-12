@@ -34,7 +34,7 @@
     - Championed a strategic shift towards a cloud-first approach, leading enterprise data migration projects that cut costs and improved data retrieval times by 35%.
     - Directed the design and implementation of an enterprise-level Data architecture framework, yielding an increase in operational efficiency.
     - Contributed to the development of a centralized Data Hub on Google Cloud BigQuery, replacing 10+ disparate platforms.
-    - Architected an Enterprise-wide data governance framework encompassing metadata management, privacy, and quality controls, that focsed on Enterprise Architecture as Code for agility.
+    - Architected an Enterprise-wide data governance framework encompassing metadata management, privacy, and quality controls, focused on Enterprise Architecture as Code for agility.
 
 - role: Practice Manager
   team: Data and Cloud
@@ -45,8 +45,8 @@
   description:
     - Led a team of ~35 engineers delivering complex data projects for a major telecom client (>$5M/year Professional Services engagement).
     - Successfully migrated data to the cloud by leading proof-of-concept initiatives and guiding architecture decisions.
-    - Provided leadership on Data and Analytics application migrations and consildation within a large enterprise.
-    - Collaborated with presales teams on RFPs/RFIs for new deals scoping ans estimations.
+    - Provided leadership on Data and Analytics application migrations and consolidation within a large enterprise.
+    - Collaborated with presales teams on RFPs/RFIs for new deals scoping and estimations.
 
 - role: Lead Presales Architect
   team: Telcom Data and Analytics

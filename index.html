@@ -5,7 +5,7 @@ layout: default
 
 <main class="resume-body">
     <section class="section summary-section">
-        <h3 class="section-title">Profile Summary</h3>
+        <h3 class="section-title">About</h3>
         <p class="summary-text">{{ site.data.profile.summary }}</p>
     </section>
 
@@ -14,8 +14,9 @@ layout: default
         <div class="cert-grid">
             {% for cert in site.data.certifications %}
             <div class="cert-card">
-                <a href="{{ cert.link }}" target="_blank" rel="noopener">
+                <a href="{{ cert.link }}" target="_blank" rel="noopener" title="{{ cert.name }}">
                     <img src="{{ cert.image }}" alt="{{ cert.name }}" class="cert-badge">
+                    <span class="cert-name">{{ cert.name }}</span>
                 </a>
             </div>
             {% endfor %}
@@ -23,25 +24,40 @@ layout: default
     </section>
 
     <section id="experience" class="section experience">
-        <h3 class="section-title">Experience</h3>
+        <h3 class="section-title">Career Journey</h3>
         <div class="timeline">
             {% for job in site.data.experience %}
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <img src="{{ job.logo }}" alt="{{ job.company }} Logo" class="company-logo">
-                    <div>
-                        <h4 class="role">{{ job.role }}</h4>
-                        <span class="team">{{ job.team }}</span>
-                        <span class="company">{{ job.company }}</span>
+            <div class="timeline-item{% if forloop.first %} timeline-item--current{% endif %}" data-date="{{ job.date }}">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <img src="{{ job.logo }}" alt="{{ job.company }} Logo" class="company-logo">
+                        <div class="timeline-title">
+                            <h4 class="role">{{ job.role }}</h4>
+                            <div class="timeline-meta">
+                                <span class="company">{{ job.company }}</span>
+                                <span class="meta-sep">·</span>
+                                <span class="team">{{ job.team }}</span>
+                            </div>
+                        </div>
+                        <div class="timeline-header-right">
+                            <span class="date">{{ job.date }}</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
+                        </div>
+                        <i class="fas fa-chevron-down timeline-chevron"></i>
                     </div>
-                    <span class="location">{{ job.location }}</span>
-                    <span class="date">{{ job.date }}</span>
+                    <div class="description-wrapper">
+                        <div class="description-inner">
+                            <div class="description-body">
+                                <ul class="description-list">
+                                    {% for item in job.description %}
+                                    <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="description-list">
-                    {% for item in job.description %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
             </div>
             {% endfor %}
         </div>
@@ -69,7 +85,7 @@ layout: default
                 <h4 class="degree">{{ edu.degree }}</h4>
                 <span class="school">{{ edu.school }}</span>
                 {% if edu.honor %}
-                <span class="location">{{ edu.honor }}</span>
+                <span class="honor">{{ edu.honor }}</span>
                 {% endif %}
             </div>
             {% endfor %}
