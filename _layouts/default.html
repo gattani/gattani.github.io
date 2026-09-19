@@ -12,14 +12,43 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
     <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ site.url }}">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ site.description }}">
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ site.data.profile.name }}",
+        "jobTitle": "{{ site.data.profile.role }}",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Google Cloud"
+        },
+        "url": "{{ site.url }}",
+        "sameAs": [
+            "{{ site.data.profile.linkedin }}",
+            "https://github.com/{{ site.data.profile.github }}"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ site.data.profile.location }}"
+        }
+    }
+    </script>
 </head>
 
 <body data-theme="dark">
@@ -34,7 +63,10 @@
                     <div class="nav-contact">
                         <span class="nav-location"><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
                         <a href="mailto:{{ site.data.profile.email }}"><i class="fas fa-envelope"></i> Email</a>
-                        <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        {% if site.data.profile.github %}
+                        <a href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                        {% endif %}
                     </div>
                 </div>
 
@@ -46,7 +78,6 @@
                 </ul>
 
                 <div class="nav-footer">
-
                     <button id="print-btn" class="print-btn"><i class="fas fa-print"></i> Export PDF</button>
                 </div>
             </div>
@@ -54,6 +85,18 @@
 
         <main class="main-content">
             <div class="container">
+                <header class="print-header" aria-hidden="true">
+                    <h1 class="print-name">{{ site.data.profile.name }}</h1>
+                    <p class="print-role">{{ site.data.profile.role }}</p>
+                    <div class="print-contact">
+                        <span><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.location }}</span>
+                        <span><i class="fas fa-envelope"></i> {{ site.data.profile.email }}</span>
+                        <span><i class="fab fa-linkedin"></i> {{ site.data.profile.linkedin_display | default: site.data.profile.linkedin }}</span>
+                        {% if site.data.profile.github %}
+                        <span><i class="fab fa-github"></i> github.com/{{ site.data.profile.github }}</span>
+                        {% endif %}
+                    </div>
+                </header>
                 {{ content }}
                 <footer class="resume-footer">
                     <p>&copy; <span id="year"></span> {{ site.data.profile.name }}</p>

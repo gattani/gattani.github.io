@@ -232,6 +232,10 @@ body {
     margin: 0 auto;
 }
 
+.print-header {
+    display: none;
+}
+
 /* ============================================================
    SECTION TITLES — chapter-heading style
    ============================================================ */
@@ -276,6 +280,50 @@ body {
     color: var(--secondary-color);
     line-height: 1.8;
 }
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(20, 184, 166, 0.4);
+    background: rgba(20, 184, 166, 0.04);
+}
+
+.metric-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.metric-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.35;
+    font-weight: 500;
+}
+
 
 /* ============================================================
    CERTIFICATIONS
@@ -345,6 +393,47 @@ body {
      Year label : left = 4-80 = -76px, width = 42px
      Dot        : left = 46-80 = -34px
 */
+
+.section-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 16px;
+}
+
+.section-header-row .section-title {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.toggle-exp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.toggle-exp-btn:hover {
+    background: rgba(20, 184, 166, 0.08);
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+}
+
+.toggle-exp-btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
 
 .timeline {
     position: relative;
@@ -439,6 +528,11 @@ body {
 .timeline-content:hover {
     box-shadow: var(--shadow-hover);
     border-color: #d4d0c8;
+}
+
+.timeline-content:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .timeline-item--current .timeline-content {
@@ -837,25 +931,251 @@ body {
     /* Date and location sit side-by-side on row 2 */
     .date    { display: inline; margin-bottom: 0; }
     .location { display: inline; white-space: nowrap; }
+
+    /* Metrics grid: 2 columns on mobile */
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .section-header-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
 
 /* ============================================================
-   PRINT
+   PRINT / PDF EXPORT
    ============================================================ */
 @media print {
     .layout-wrapper { display: block; }
-    .side-nav { display: none; }
+    .side-nav { display: none !important; }
+    .print-btn, .toggle-exp-btn { display: none !important; }
     .main-content { padding: 0; background: white; }
-    body { background: white; font-size: 10.5pt; }
-    .print-btn { display: none; }
-    .section { page-break-inside: avoid; margin-bottom: 1.5rem; }
-    .timeline-item { page-break-inside: avoid; }
-    .timeline-content { box-shadow: none; border: 1px solid #ddd; cursor: default; }
-    .description-wrapper { grid-template-rows: 1fr !important; } /* always show in print */
-    .description-inner { overflow: visible; }
-    .timeline-chevron { display: none; }
-    a { text-decoration: none; color: black; }
-    .resume-footer { border: none; margin: 0; padding: 0; }
-    .skill-tag:hover { background: var(--skill-tag-bg); color: var(--skill-tag-color); transform: none; }
-    .summary-section, .certifications, .skills, .education { box-shadow: none; }
+    body {
+        background: white !important;
+        color: #1a1a1a !important;
+        font-size: 10pt;
+        line-height: 1.5;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-header {
+        display: block !important;
+        margin-bottom: 1.75rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #111;
+    }
+
+    .print-name {
+        font-family: var(--font-heading);
+        font-size: 24pt;
+        font-weight: 800;
+        color: #111;
+        line-height: 1.1;
+        margin-bottom: 4px;
+        letter-spacing: -0.5px;
+    }
+
+    .print-role {
+        font-size: 11pt;
+        font-weight: 600;
+        color: #0d9488;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+
+    .print-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 9.5pt;
+        color: #444;
+    }
+
+    .print-contact span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        color: #111 !important;
+        font-size: 0.8rem;
+    }
+
+    .section-title::after {
+        background: #ccc;
+    }
+
+    .summary-section {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        border-left: 3px solid #0d9488 !important;
+        padding: 1.25rem !important;
+    }
+
+    .summary-text {
+        color: #2d3748 !important;
+        font-size: 9.5pt;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+        border-top: 1px solid #e2e8f0 !important;
+    }
+
+    .metric-card {
+        background: #fff !important;
+        border: 1px solid #e2e8f0 !important;
+        padding: 8px 10px !important;
+        box-shadow: none !important;
+    }
+
+    .metric-value {
+        color: #0d9488 !important;
+        font-size: 1.25rem !important;
+    }
+
+    .metric-label {
+        color: #4a5568 !important;
+        font-size: 7.5pt !important;
+    }
+
+    .timeline {
+        padding-left: 0 !important;
+    }
+
+    .timeline::before {
+        display: none !important;
+    }
+
+    .timeline-dot {
+        display: none !important;
+    }
+
+    .timeline-item {
+        page-break-inside: avoid;
+        margin-bottom: 1rem !important;
+        opacity: 1 !important;
+    }
+
+    .timeline-item::before {
+        display: none !important;
+    }
+
+    .timeline-content {
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+        background: #fff !important;
+        cursor: default;
+        padding: 12px 16px !important;
+    }
+
+    .role {
+        color: #1a202c !important;
+        font-size: 10.5pt;
+    }
+
+    .company {
+        color: #2d3748 !important;
+        font-weight: 600;
+    }
+
+    .team {
+        color: #718096 !important;
+    }
+
+    .timeline-header-right .date {
+        color: #4a5568 !important;
+    }
+
+    .timeline-header-right .location {
+        color: #718096 !important;
+    }
+
+    .description-wrapper {
+        grid-template-rows: 1fr !important;
+    }
+
+    .description-inner {
+        overflow: visible !important;
+    }
+
+    .timeline-chevron {
+        display: none !important;
+    }
+
+    .description-list li {
+        color: #2d3748 !important;
+        font-size: 9pt;
+        line-height: 1.45;
+    }
+
+    .cert-card {
+        border: 1px solid #e2e8f0 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    .cert-name {
+        color: #2d3748 !important;
+        font-size: 8pt;
+    }
+
+    .card {
+        background: #fff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+    }
+
+    .degree {
+        color: #1a202c !important;
+    }
+
+    .school {
+        color: #4a5568 !important;
+    }
+
+    .honor {
+        color: #0d9488 !important;
+    }
+
+    .skills-category strong {
+        color: #1a202c !important;
+    }
+
+    .skill-tag {
+        background: #f0fdfa !important;
+        border: 1px solid #99f6e4 !important;
+        color: #0f766e !important;
+        font-size: 8pt !important;
+    }
+
+    .skill-tag:hover {
+        background: #f0fdfa !important;
+        color: #0f766e !important;
+        transform: none !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1a202c !important;
+    }
+
+    .resume-footer {
+        display: none !important;
+    }
 }
+

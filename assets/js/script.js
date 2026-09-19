@@ -16,16 +16,64 @@ document.addEventListener('DOMContentLoaded', () => {
         if (match) item.setAttribute('data-year', match[0]);
     });
 
-    // ── Timeline accordion ────────────────────────────────────────
+    // ── Timeline accordion & a11y ─────────────────────────────────
+    const toggleAllBtn = document.getElementById('toggle-all-exp');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const updateToggleAllButtonState = () => {
+        if (!toggleAllBtn || timelineItems.length === 0) return;
+        const allExpanded = Array.from(timelineItems).every(item => item.classList.contains('is-expanded'));
+        const toggleText = toggleAllBtn.querySelector('.toggle-text');
+        const icon = toggleAllBtn.querySelector('i');
+
+        toggleAllBtn.setAttribute('aria-expanded', allExpanded ? 'true' : 'false');
+        if (toggleText) {
+            toggleText.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+        }
+        if (icon) {
+            icon.className = allExpanded ? 'fas fa-compress-alt' : 'fas fa-layer-group';
+        }
+    };
+
+    const toggleCard = (card) => {
+        const item = card.closest('.timeline-item');
+        if (!item) return;
+        const isExpanded = item.classList.toggle('is-expanded');
+        card.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        updateToggleAllButtonState();
+    };
+
     document.querySelectorAll('.timeline-content').forEach(card => {
-        card.addEventListener('click', () => {
-            card.closest('.timeline-item').classList.toggle('is-expanded');
+        card.addEventListener('click', () => toggleCard(card));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleCard(card);
+            }
         });
     });
 
-    // Open the current role by default
+    // Open current role by default and sync accessibility attribute
     const firstItem = document.querySelector('.timeline-item--current');
-    if (firstItem) firstItem.classList.add('is-expanded');
+    if (firstItem) {
+        firstItem.classList.add('is-expanded');
+        const firstCard = firstItem.querySelector('.timeline-content');
+        if (firstCard) firstCard.setAttribute('aria-expanded', 'true');
+    }
+    updateToggleAllButtonState();
+
+    if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', () => {
+            const allExpanded = Array.from(timelineItems).every(item => item.classList.contains('is-expanded'));
+            const targetState = !allExpanded;
+            timelineItems.forEach(item => {
+                item.classList.toggle('is-expanded', targetState);
+                const card = item.querySelector('.timeline-content');
+                if (card) card.setAttribute('aria-expanded', targetState ? 'true' : 'false');
+            });
+            updateToggleAllButtonState();
+        });
+    }
 
     // ── Nav scroll-spy ────────────────────────────────────────────
     const sections = document.querySelectorAll('section[id]');

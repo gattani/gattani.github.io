@@ -3,19 +3,37 @@ layout: default
 ---
 
 
-<main class="resume-body">
+<div class="resume-body">
     <section class="section summary-section">
-        <h3 class="section-title">About</h3>
+        <h2 class="section-title">About</h2>
         <p class="summary-text">{{ site.data.profile.summary }}</p>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-value">19+</span>
+                <span class="metric-label">Years Enterprise Scale</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">2</span>
+                <span class="metric-label">Cloud Hyperscalers (Google & AWS)</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">7</span>
+                <span class="metric-label">Multi-Cloud Certifications</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">Global</span>
+                <span class="metric-label">Impact (NA, UK, Nordics & India)</span>
+            </div>
+        </div>
     </section>
 
     <section id="certifications" class="section certifications">
-        <h3 class="section-title">Certifications</h3>
+        <h2 class="section-title">Certifications</h2>
         <div class="cert-grid">
             {% for cert in site.data.certifications %}
             <div class="cert-card">
-                <a href="{{ cert.link }}" target="_blank" rel="noopener" title="{{ cert.name }}">
-                    <img src="{{ cert.image }}" alt="{{ cert.name }}" class="cert-badge">
+                <a href="{{ cert.link }}" target="_blank" rel="noopener noreferrer" title="{{ cert.name }}" aria-label="{{ cert.name }} (opens verification in new tab)">
+                    <img src="{{ cert.image }}" alt="{{ cert.name }}" class="cert-badge" loading="lazy">
                     <span class="cert-name">{{ cert.name }}</span>
                 </a>
             </div>
@@ -24,14 +42,20 @@ layout: default
     </section>
 
     <section id="experience" class="section experience">
-        <h3 class="section-title">Career Journey</h3>
+        <div class="section-header-row">
+            <h2 class="section-title">Career Journey</h2>
+            <button id="toggle-all-exp" class="toggle-exp-btn" type="button" aria-expanded="false">
+                <i class="fas fa-layer-group"></i>
+                <span class="toggle-text">Expand All</span>
+            </button>
+        </div>
         <div class="timeline">
             {% for job in site.data.experience %}
             <div class="timeline-item{% if forloop.first %} timeline-item--current{% endif %}" data-date="{{ job.date }}">
                 <div class="timeline-dot"></div>
-                <div class="timeline-content">
+                <div class="timeline-content" role="button" tabindex="0" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ job.role }} at {{ job.company }}">
                     <div class="timeline-header">
-                        <img src="{{ job.logo }}" alt="{{ job.company }} Logo" class="company-logo">
+                        <img src="{{ job.logo }}" alt="{{ job.company }} Logo" class="company-logo" loading="lazy">
                         <div class="timeline-title">
                             <h4 class="role">{{ job.role }}</h4>
                             <div class="timeline-meta">
@@ -64,7 +88,7 @@ layout: default
     </section>
 
     <section id="skills" class="section skills">
-        <h3 class="section-title">Key Skills</h3>
+        <h2 class="section-title">Key Skills</h2>
         {% for category in site.data.skills %}
         <div class="skills-category">
             <strong>{{ category.category }}</strong>
@@ -78,7 +102,7 @@ layout: default
     </section>
 
     <section id="education" class="section education">
-        <h3 class="section-title">Education</h3>
+        <h2 class="section-title">Education</h2>
         <div class="card-grid">
             {% for edu in site.data.education %}
             <div class="card">
@@ -91,4 +115,4 @@ layout: default
             {% endfor %}
         </div>
     </section>
-</main>
+</div>
