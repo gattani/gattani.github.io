@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Architecting an Enterprise Data Mesh: Lessons from High-Stakes Cloud Modernization"
-date: 2026-09-19
+date: 2026-09-18
 summary: "Why traditional centralized data lakes bottleneck large enterprises, and how a domain-driven data mesh provides agility, governance, and business ownership."
 tags: [Data Architecture, Cloud Transformation, Data Mesh, Google Cloud, AWS]
 read_time: "5 min read"
