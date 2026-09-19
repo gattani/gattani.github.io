@@ -1,0 +1,56 @@
+---
+layout: default
+title: Blog & Insights | Abhishek Gattani
+description: Technical insights and architecture notes on cloud transformation, modern data platforms, and applied generative AI.
+permalink: /blog/
+---
+
+<div class="blog-container">
+    <header class="blog-header">
+        <h2 class="section-title">Insights & Architecture Notes</h2>
+        <p class="summary-text">
+            Practical reflections on multi-cloud transformation, enterprise data architecture, and deploying generative AI at scale.
+        </p>
+    </header>
+
+    <div class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-card">
+            <div class="post-card-header">
+                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
+                    {{ post.date | date: "%B %d, %Y" }}
+                </time>
+                {% if post.read_time %}
+                <span class="meta-sep">·</span>
+                <span class="post-read-time">{{ post.read_time }}</span>
+                {% endif %}
+            </div>
+
+            <h3 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+
+            <p class="post-excerpt">
+                {% if post.summary %}
+                    {{ post.summary }}
+                {% else %}
+                    {{ post.excerpt | strip_html | truncatewords: 35 }}
+                {% endif %}
+            </p>
+
+            {% if post.tags and post.tags.size > 0 %}
+            <div class="post-tags">
+                {% for tag in post.tags %}
+                <span class="skill-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </article>
+        {% empty %}
+        <div class="no-posts-card">
+            <p>New articles and architecture notes are on the way. Check back soon!</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+

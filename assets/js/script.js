@@ -86,12 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const setActive = (id) => {
         navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            const rawHref = link.getAttribute('href') || '';
+            link.classList.toggle('active', rawHref.includes(`#${id}`));
         });
     };
 
     const highlightNav = () => {
-        if (suppressSpy) return;
+        if (suppressSpy || sections.length === 0) return;
 
         const trigger = window.innerHeight * 0.3;
         let activeId = '';
@@ -103,33 +104,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // If we've scrolled to the very bottom, mark the last section active
         const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 4;
-        if (!activeId && atBottom) {
+        if (!activeId && atBottom && sections.length > 0) {
             activeId = sections[sections.length - 1].id;
         }
 
         if (activeId) setActive(activeId);
     };
 
-    window.addEventListener('scroll', highlightNav, { passive: true });
-    highlightNav();
+    if (sections.length > 0) {
+        window.addEventListener('scroll', highlightNav, { passive: true });
+        highlightNav();
+    }
 
-    // ── Smooth scroll — force active immediately on click ─────────
+    // ── Smooth scroll — only intercept local hash targets on current page ──
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').slice(1);
-            const target   = document.getElementById(targetId);
-            if (!target) return;
+            const rawHref = link.getAttribute('href') || '';
+            const hashIndex = rawHref.indexOf('#');
+            if (hashIndex === -1) {
+                // Standard page link (e.g., /blog/) — allow normal navigation
+                return;
+            }
 
-            // Immediately highlight the clicked link
+            const targetId = rawHref.slice(hashIndex + 1);
+            const target = document.getElementById(targetId);
+            if (!target) {
+                // Target is on another page (e.g., from /blog/ navigating back to /#experience)
+                // Let browser handle navigation naturally
+                return;
+            }
+
+            // Local section target exists on this page: smooth scroll
+            e.preventDefault();
             setActive(targetId);
 
-            // Suppress scroll-spy during the smooth scroll (~700 ms)
             suppressSpy = true;
             clearTimeout(suppressTimer);
             suppressTimer = setTimeout(() => { suppressSpy = false; }, 800);
 
             target.scrollIntoView({ behavior: 'smooth' });
+            if (history.pushState) {
+                history.pushState(null, null, `#${targetId}`);
+            }
         });
     });
 

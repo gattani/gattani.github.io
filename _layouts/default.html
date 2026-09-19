@@ -71,10 +71,11 @@
                 </div>
 
                 <ul>
-                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span></a></li>
-                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span>Career Journey</span></a></li>
-                    <li><a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span>Skills</span></a></li>
-                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+                    <li><a href="{{ '/#certifications' | relative_url }}" class="nav-link"><i class="fas fa-certificate"></i><span>Certifications</span></a></li>
+                    <li><a href="{{ '/#experience' | relative_url }}" class="nav-link"><i class="fas fa-briefcase"></i><span>Career Journey</span></a></li>
+                    <li><a href="{{ '/#skills' | relative_url }}" class="nav-link"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+                    <li><a href="{{ '/#education' | relative_url }}" class="nav-link"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+                    <li><a href="{{ '/blog/' | relative_url }}" class="nav-link{% if page.url contains '/blog' %} active{% endif %}"><i class="fas fa-pen-nib"></i><span>Blog</span></a></li>
                 </ul>
 
                 <div class="nav-footer">

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="post-article">
+    <div class="post-nav-back">
+        <a href="{{ '/blog/' | relative_url }}" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            <span>All Articles</span>
+        </a>
+    </div>
+
+    <header class="article-header">
+        <div class="article-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" class="article-date">
+                <i class="far fa-calendar-alt"></i> {{ page.date | date: "%B %d, %Y" }}
+            </time>
+            {% if page.read_time %}
+            <span class="meta-sep">·</span>
+            <span class="article-read-time">
+                <i class="far fa-clock"></i> {{ page.read_time }}
+            </span>
+            {% endif %}
+        </div>
+        <h1 class="article-title">{{ page.title }}</h1>
+        {% if page.tags and page.tags.size > 0 %}
+        <div class="article-tags">
+            {% for tag in page.tags %}
+            <span class="skill-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="markdown-body">
+        {{ content }}
+    </div>
+
+    <footer class="article-footer">
+        <div class="article-footer-share">
+            <span>Share this article:</span>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer" class="share-btn twitter">
+                <i class="fab fa-twitter"></i> X / Twitter
+            </a>
+        </div>
+        <div class="article-footer-back">
+            <a href="{{ '/blog/' | relative_url }}" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Blog</span>
+            </a>
+        </div>
+    </footer>
+</article>
+
