@@ -60,38 +60,15 @@ The industry has converged on a pragmatic hybrid. Pure decentralisation does not
 
 ---
 
-## What a Data Product Looks Like in Practice
+## What Separates a Data Product from a Data Dump
 
-A data product needs explicit boundaries. Here is a simplified contract:
+Most organisations already have data. What they lack is data that other teams can actually trust and use without a phone call to the source team.
 
-```yaml
-# data-product-contract.yaml
-apiVersion: v1
-kind: DataProduct
-metadata:
-  name: customer-health-analytics
-  domain: customer-success
-  owner: cs-data-team@company.com
-spec:
-  outputPorts:
-    - type: bigquery
-      dataset: cs_curated
-      table: accounts_health_score
-      schema:
-        - name: account_id
-          type: STRING
-          mode: REQUIRED
-        - name: health_index
-          type: FLOAT64
-          mode: REQUIRED
-        - name: last_interaction_ts
-          type: TIMESTAMP
-  slo:
-    freshness: "1h"
-    availability: "99.9%"
-```
+A genuine data product has four characteristics. First, it has an owner with a name and a phone number. Not a shared inbox, not "the data team," but a specific person accountable for its accuracy. Second, it carries a freshness guarantee. Consumers know whether they are looking at data from an hour ago or a week ago. Third, it has a stable structure. If the format changes, consumers get notice before their pipelines break, not after. Fourth, it has documented meaning. Column names like `cust_hlth_idx` tell nobody anything. A data product explains what each field measures, how it is calculated, and where it comes from.
 
-When domains publish contracts like this, downstream consumers (dashboards, ML features, RAG pipelines) build on guaranteed stability rather than hope. Schema breaks, the silent killer of enterprise analytics, get caught in deployment pipelines before they reach production.
+This sounds obvious. In practice, fewer than one in five enterprise datasets meet all four criteria. The gap between "we have the data" and "the data is usable" is where most AI projects stall. An ML model trained on a customer health score that silently stopped refreshing three months ago will produce confident, wrong predictions. A RAG pipeline pulling from a knowledge base with undocumented schema changes will hallucinate with authority.
+
+The fix is not more technology. It is accountability. When a domain team publishes a data product with explicit guarantees, every downstream consumer (a dashboard, an ML feature, a gen AI retrieval pipeline) builds on stability rather than hope.
 
 ---
 
